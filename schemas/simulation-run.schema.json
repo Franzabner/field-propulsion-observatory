@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/simulation-run.schema.json",
+  "title": "Simulation Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "scenario_id",
+    "synthetic",
+    "assumptions",
+    "trajectory_estimate_id",
+    "uncertainty_model_id",
+    "confidence",
+    "boundary_language"
+  ],
+  "properties": {
+    "run_id": { "type": "string", "pattern": "^run-[a-z0-9-]+$" },
+    "scenario_id": { "type": "string", "pattern": "^scenario-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "assumptions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "trajectory_estimate_id": { "type": "string", "pattern": "^trajectory-[a-z0-9-]+$" },
+    "uncertainty_model_id": { "type": "string", "pattern": "^uncertainty-[a-z0-9-]+$" },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "insufficient_data",
+        "low_confidence_reconstruction",
+        "bounded_reconstruction",
+        "multi_sensor_supported",
+        "independently_reconstructable",
+        "scientifically_reviewable"
+      ]
+    },
+    "boundary_language": { "type": "string" }
+  }
+}

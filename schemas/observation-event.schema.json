@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/observation-event.schema.json",
+  "title": "Observation Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "title",
+    "synthetic",
+    "source_type",
+    "observation_time",
+    "location",
+    "sensor_metadata_ids",
+    "motion_claim_ids",
+    "public_boundary"
+  ],
+  "properties": {
+    "event_id": { "type": "string", "pattern": "^obs-[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 3 },
+    "synthetic": { "type": "boolean", "const": true },
+    "source_type": {
+      "type": "string",
+      "enum": ["synthetic_report", "synthetic_video", "synthetic_multi_sensor", "template_only"]
+    },
+    "observation_time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp_utc", "timestamp_quality"],
+      "properties": {
+        "timestamp_utc": { "type": "string" },
+        "timestamp_quality": {
+          "type": "string",
+          "enum": ["declared", "estimated", "simulated", "unknown"]
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "latitude_deg", "longitude_deg", "altitude_m"],
+      "properties": {
+        "description": { "type": "string" },
+        "latitude_deg": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+        "longitude_deg": { "type": ["number", "null"], "minimum": -180, "maximum": 180 },
+        "altitude_m": { "type": ["number", "null"] }
+      }
+    },
+    "sensor_metadata_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^sensor-[a-z0-9-]+$" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "motion_claim_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^claim-[a-z0-9-]+$" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "public_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["real_case", "classified_source", "exotic_propulsion_claim"],
+      "properties": {
+        "real_case": { "type": "boolean", "const": false },
+        "classified_source": { "type": "boolean", "const": false },
+        "exotic_propulsion_claim": { "type": "boolean", "const": false }
+      }
+    }
+  }
+}

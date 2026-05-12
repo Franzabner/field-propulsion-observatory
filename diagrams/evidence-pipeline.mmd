@@ -1,0 +1,16 @@
+flowchart LR
+  observation["Observation"]
+  metadata["Sensor Metadata"]
+  geometry["Geometry"]
+  trajectory["Trajectory"]
+  motion["Motion Claim"]
+  simulation["Simulation Run"]
+  boundary["Hypothesis Boundary"]
+  status["Review Status"]
+
+  observation --> metadata --> geometry --> trajectory --> motion --> simulation --> boundary --> status
+
+  classDef evidence fill:#e8f1ff,stroke:#244a7f,color:#111827
+  classDef boundary fill:#fff7ed,stroke:#9a3412,color:#111827
+  class observation,metadata,geometry,trajectory,motion,simulation evidence
+  class boundary,status boundary

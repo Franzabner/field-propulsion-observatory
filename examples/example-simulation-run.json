@@ -1,0 +1,14 @@
+{
+  "run_id": "run-synthetic-range-ambiguity",
+  "scenario_id": "scenario-range-ambiguity",
+  "synthetic": true,
+  "assumptions": [
+    "Target range is assumed rather than measured.",
+    "Angular rate is extracted from a synthetic frame track.",
+    "Platform velocity is unknown."
+  ],
+  "trajectory_estimate_id": "trajectory-synthetic-range-ambiguity",
+  "uncertainty_model_id": "uncertainty-synthetic-range-ambiguity",
+  "confidence": "insufficient_data",
+  "boundary_language": "The scenario demonstrates range-dependent speed only and does not support a propulsion conclusion."
+}

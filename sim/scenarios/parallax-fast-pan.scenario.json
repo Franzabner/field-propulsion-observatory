@@ -1,0 +1,30 @@
+{
+  "scenario_id": "scenario-parallax-fast-pan",
+  "scenario_name": "Synthetic parallax during fast pan",
+  "synthetic": true,
+  "assumptions": [
+    "The platform performs a fast pan while tracking a near-field synthetic object.",
+    "The apparent angular rate includes camera motion.",
+    "Range is assumed for demonstration and is not measured evidence."
+  ],
+  "sensor_metadata": {
+    "timestamp_quality": "simulated",
+    "platform_location_known": true,
+    "platform_velocity_known": false,
+    "sensor_type": "optical",
+    "field_of_view_deg": 12,
+    "frame_rate_fps": 60,
+    "target_range_m": 120,
+    "azimuth_deg": 70,
+    "elevation_deg": 8,
+    "chain_of_custody": "synthetic_fixture",
+    "compression_history": "simulated",
+    "radar_correlation": "absent",
+    "infrared_correlation": "absent"
+  },
+  "trajectory_input": {
+    "angular_rate_deg_s": 14,
+    "duration_s": 1.1,
+    "delta_v_m_s": 5
+  }
+}

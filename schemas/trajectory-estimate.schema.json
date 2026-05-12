@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/trajectory-estimate.schema.json",
+  "title": "Trajectory Estimate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trajectory_estimate_id",
+    "synthetic",
+    "range_m",
+    "angular_rate_deg_s",
+    "duration_s",
+    "distance_m",
+    "speed_m_s",
+    "delta_v_m_s",
+    "acceleration_m_s2",
+    "range_dependent"
+  ],
+  "properties": {
+    "trajectory_estimate_id": { "type": "string", "pattern": "^trajectory-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "range_m": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "angular_rate_deg_s": { "type": ["number", "null"] },
+    "duration_s": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "distance_m": { "type": ["number", "null"], "minimum": 0 },
+    "speed_m_s": { "type": ["number", "null"], "minimum": 0 },
+    "delta_v_m_s": { "type": ["number", "null"] },
+    "acceleration_m_s2": { "type": ["number", "null"] },
+    "range_dependent": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/uncertainty-model.schema.json",
+  "title": "Uncertainty Model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "uncertainty_model_id",
+    "synthetic",
+    "missing_metadata",
+    "confidence_level",
+    "uncertainty_notes",
+    "unresolved_is_valid_result"
+  ],
+  "properties": {
+    "uncertainty_model_id": { "type": "string", "pattern": "^uncertainty-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "missing_metadata": { "type": "array", "items": { "type": "string" } },
+    "confidence_level": {
+      "type": "string",
+      "enum": [
+        "insufficient_data",
+        "low_confidence_reconstruction",
+        "bounded_reconstruction",
+        "multi_sensor_supported",
+        "independently_reconstructable",
+        "scientifically_reviewable"
+      ]
+    },
+    "uncertainty_notes": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "unresolved_is_valid_result": { "type": "boolean", "const": true }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/synthetic-sensor-frame.schema.json",
+  "title": "Synthetic Sensor Frame",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "frame_id",
+    "synthetic",
+    "sensor_type",
+    "timestamp_s",
+    "platform_motion",
+    "measurement",
+    "artifacts"
+  ],
+  "properties": {
+    "frame_id": { "type": "string", "pattern": "^frame-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "sensor_type": {
+      "type": "string",
+      "enum": ["optical", "infrared", "radar"]
+    },
+    "timestamp_s": { "type": "number", "minimum": 0 },
+    "platform_motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pan_rate_deg_s", "velocity_m_s"],
+      "properties": {
+        "pan_rate_deg_s": { "type": "number" },
+        "velocity_m_s": { "type": "number" }
+      }
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["azimuth_deg", "elevation_deg", "range_m", "signal"],
+      "properties": {
+        "azimuth_deg": { "type": "number", "minimum": 0, "maximum": 360 },
+        "elevation_deg": { "type": "number", "minimum": -90, "maximum": 90 },
+        "range_m": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "signal": { "type": "string" }
+      }
+    },
+    "artifacts": { "type": "array", "items": { "type": "string" } }
+  }
+}

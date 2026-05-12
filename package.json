@@ -1,0 +1,17 @@
+{
+  "name": "field-propulsion-observatory",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public-safe engineering framework for sensor, trajectory, simulation, and propulsion hypothesis boundary analysis.",
+  "scripts": {
+    "validate": "node scripts/validate-json.js",
+    "simulate:range": "node scripts/run-simulation.js sim/scenarios/range-ambiguity.scenario.json",
+    "simulate:parallax": "node scripts/run-simulation.js sim/scenarios/parallax-fast-pan.scenario.json",
+    "simulate:altitude": "node scripts/run-simulation.js sim/scenarios/unknown-altitude.scenario.json",
+    "simulate:multi": "node scripts/run-simulation.js sim/scenarios/multi-sensor-minimal.scenario.json",
+    "test": "npm run validate && npm run simulate:range && npm run simulate:parallax && npm run simulate:altitude && npm run simulate:multi"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}

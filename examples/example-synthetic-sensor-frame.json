@@ -1,0 +1,20 @@
+{
+  "frame_id": "frame-synthetic-optical-0001",
+  "synthetic": true,
+  "sensor_type": "optical",
+  "timestamp_s": 0.033,
+  "platform_motion": {
+    "pan_rate_deg_s": 1.2,
+    "velocity_m_s": 0
+  },
+  "measurement": {
+    "azimuth_deg": 42.1,
+    "elevation_deg": 18.4,
+    "range_m": null,
+    "signal": "bright point source"
+  },
+  "artifacts": [
+    "simulated compression",
+    "simulated clock drift"
+  ]
+}

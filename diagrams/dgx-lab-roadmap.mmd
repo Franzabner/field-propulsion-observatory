@@ -1,0 +1,27 @@
+flowchart TB
+  public_scaffold["Public Scaffold"]
+  private_lab["Optional High-Compute Lab Environment"]
+  monte["Monte Carlo Uncertainty Sweeps"]
+  synthetic["Synthetic Optical / IR / Radar Tracks"]
+  fusion["Multi-Sensor Fusion Experiments"]
+  batches["Trajectory Reconstruction Batches"]
+  notes["Private Lab Notebooks"]
+  release["Public-Safe Release Notes"]
+
+  public_scaffold --> private_lab
+  private_lab --> monte
+  private_lab --> synthetic
+  private_lab --> fusion
+  private_lab --> batches
+  monte --> notes
+  synthetic --> notes
+  fusion --> notes
+  batches --> notes
+  notes --> release
+
+  classDef publicNode fill:#e8f1ff,stroke:#244a7f,color:#111827
+  classDef privateNode fill:#f8fafc,stroke:#475569,color:#111827
+  classDef releaseNode fill:#eef7f1,stroke:#166534,color:#111827
+  class public_scaffold publicNode
+  class private_lab,monte,synthetic,fusion,batches,notes privateNode
+  class release releaseNode

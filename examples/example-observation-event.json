@@ -1,0 +1,23 @@
+{
+  "event_id": "obs-synthetic-range-ambiguity",
+  "title": "Synthetic range ambiguity track",
+  "synthetic": true,
+  "source_type": "synthetic_video",
+  "observation_time": {
+    "timestamp_utc": "2026-01-15T20:00:00Z",
+    "timestamp_quality": "simulated"
+  },
+  "location": {
+    "description": "Fictional coastal test range",
+    "latitude_deg": null,
+    "longitude_deg": null,
+    "altitude_m": 12
+  },
+  "sensor_metadata_ids": ["sensor-synthetic-optical-01"],
+  "motion_claim_ids": ["claim-synthetic-fast-transit"],
+  "public_boundary": {
+    "real_case": false,
+    "classified_source": false,
+    "exotic_propulsion_claim": false
+  }
+}

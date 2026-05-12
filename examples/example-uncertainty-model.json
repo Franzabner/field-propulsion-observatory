@@ -1,0 +1,15 @@
+{
+  "uncertainty_model_id": "uncertainty-synthetic-range-ambiguity",
+  "synthetic": true,
+  "missing_metadata": [
+    "measured target range",
+    "platform velocity",
+    "independent radar correlation"
+  ],
+  "confidence_level": "insufficient_data",
+  "uncertainty_notes": [
+    "Unknown range creates unknown size, speed, acceleration, and energy.",
+    "Unresolved is a valid result."
+  ],
+  "unresolved_is_valid_result": true
+}

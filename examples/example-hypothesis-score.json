@@ -1,0 +1,24 @@
+{
+  "score_id": "score-synthetic-fast-transit",
+  "motion_claim_id": "claim-synthetic-fast-transit",
+  "synthetic": true,
+  "known_cause_screening": [
+    {
+      "category": "bird_insect",
+      "status": "plausible",
+      "notes": "Near-field range is not excluded by the synthetic metadata."
+    },
+    {
+      "category": "sensor_artifact",
+      "status": "insufficient_data",
+      "notes": "Compression history is simulated but not enough to screen all visual artifacts."
+    }
+  ],
+  "speculative_boundaries": [
+    {
+      "category": "vacuum_energy_zero_point_hypothesis",
+      "boundary": "Not demonstrated as a public propulsion technology and unsupported by this synthetic record."
+    }
+  ],
+  "conclusion": "insufficient_data"
+}

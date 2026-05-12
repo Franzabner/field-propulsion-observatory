@@ -1,0 +1,24 @@
+{
+  "sensor_id": "sensor-synthetic-optical-01",
+  "synthetic": true,
+  "platform": "Fictional fixed tripod",
+  "sensor_type": "optical",
+  "timestamp_quality": "simulated",
+  "platform_location_known": true,
+  "platform_velocity_known": true,
+  "focal_length_mm": 50,
+  "field_of_view_deg": 18,
+  "frame_rate_fps": 30,
+  "target_range_m": null,
+  "azimuth_deg": 42.1,
+  "elevation_deg": 18.4,
+  "weather": "synthetic clear conditions",
+  "wind": "synthetic light wind",
+  "correlations": {
+    "radar": "absent",
+    "infrared": "absent",
+    "optical": "present"
+  },
+  "chain_of_custody": "synthetic_fixture",
+  "compression_history": "simulated"
+}

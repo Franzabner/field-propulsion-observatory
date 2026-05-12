@@ -1,0 +1,41 @@
+flowchart TB
+  root["Motion Claim"]
+  angular["Angular / Visual Claims"]
+  signature["Signature Claims"]
+  medium["Medium / Formation Claims"]
+  sensor["Sensor-Limited Claims"]
+  evidence["Evidence Threshold"]
+
+  root --> angular
+  root --> signature
+  root --> medium
+  root --> sensor
+  angular --> hover["Hovering"]
+  angular --> instant["Instantaneous Acceleration"]
+  angular --> turn["Sharp Angular Turn"]
+  angular --> transit["Silent High-Speed Transit"]
+  signature --> exhaust["No Visible Exhaust"]
+  signature --> plume["No Thermal Plume"]
+  medium --> transmedium["Transmedium Behavior"]
+  medium --> formation["Formation Behavior"]
+  medium --> split["Apparent Splitting / Merging"]
+  sensor --> radar["Radar-Only Track"]
+  sensor --> infrared["Infrared-Only Signature"]
+  sensor --> optical["Optical-Only Object"]
+  hover --> evidence
+  instant --> evidence
+  turn --> evidence
+  transit --> evidence
+  exhaust --> evidence
+  plume --> evidence
+  transmedium --> evidence
+  formation --> evidence
+  split --> evidence
+  radar --> evidence
+  infrared --> evidence
+  optical --> evidence
+
+  classDef claim fill:#f8fafc,stroke:#475569,color:#111827
+  classDef threshold fill:#fff7ed,stroke:#9a3412,color:#111827
+  class root,angular,signature,medium,sensor,hover,instant,turn,transit,exhaust,plume,transmedium,formation,split,radar,infrared,optical claim
+  class evidence threshold

@@ -1,0 +1,37 @@
+flowchart LR
+  claim["Motion Claim"]
+  known["Known / Conventional Screening"]
+  speculative["Speculative Engineering Vocabulary"]
+  boundary["Hypothesis Boundary"]
+
+  claim --> known
+  claim --> speculative
+  known --> aircraft["Aircraft / Drone / Balloon / Satellite"]
+  known --> biological["Bird / Insect"]
+  known --> environment["Atmospheric Effect"]
+  known --> artifact["Sensor Artifact / Spoofing"]
+  known --> classified["Classified Aerospace Platform"]
+  speculative --> plasma["Plasma / Flow Control"]
+  speculative --> em["Electromagnetic Coupling"]
+  speculative --> mhd["Magnetohydrodynamic"]
+  speculative --> inertia["Inertia Management"]
+  speculative --> gravity["Gravitational / Metric"]
+  speculative --> vacuum["Vacuum-Energy / Zero-Point"]
+  aircraft --> boundary
+  biological --> boundary
+  environment --> boundary
+  artifact --> boundary
+  classified --> boundary
+  plasma --> boundary
+  em --> boundary
+  mhd --> boundary
+  inertia --> boundary
+  gravity --> boundary
+  vacuum --> boundary
+
+  classDef known fill:#eef7f1,stroke:#166534,color:#111827
+  classDef speculative fill:#fff7ed,stroke:#9a3412,color:#111827
+  classDef root fill:#e8f1ff,stroke:#244a7f,color:#111827
+  class claim,boundary root
+  class known,aircraft,biological,environment,artifact,classified known
+  class speculative,plasma,em,mhd,inertia,gravity,vacuum speculative

@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/motion-claim.schema.json",
+  "title": "Motion Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "observation_event_id",
+    "synthetic",
+    "claim_type",
+    "apparent_behavior",
+    "required_data",
+    "common_false_positives",
+    "minimum_evidence_threshold",
+    "review_status"
+  ],
+  "properties": {
+    "claim_id": { "type": "string", "pattern": "^claim-[a-z0-9-]+$" },
+    "observation_event_id": { "type": "string", "pattern": "^obs-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "hovering",
+        "instantaneous_acceleration",
+        "sharp_angular_turn",
+        "silent_high_speed_transit",
+        "no_visible_exhaust",
+        "no_thermal_plume",
+        "transmedium_behavior",
+        "formation_behavior",
+        "apparent_splitting_merging",
+        "radar_only_track",
+        "infrared_only_signature",
+        "optical_only_object"
+      ]
+    },
+    "apparent_behavior": { "type": "string" },
+    "required_data": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "common_false_positives": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "minimum_evidence_threshold": { "type": "string" },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "insufficient_data",
+        "low_confidence_reconstruction",
+        "bounded_reconstruction",
+        "multi_sensor_supported",
+        "independently_reconstructable",
+        "scientifically_reviewable"
+      ]
+    }
+  }
+}

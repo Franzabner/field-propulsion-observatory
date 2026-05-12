@@ -1,0 +1,12 @@
+{
+  "trajectory_estimate_id": "trajectory-synthetic-range-ambiguity",
+  "synthetic": true,
+  "range_m": 800,
+  "angular_rate_deg_s": 4.2,
+  "duration_s": 2.4,
+  "distance_m": 58.64,
+  "speed_m_s": 24.43,
+  "delta_v_m_s": null,
+  "acceleration_m_s2": null,
+  "range_dependent": true
+}

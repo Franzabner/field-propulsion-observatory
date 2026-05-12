@@ -1,0 +1,30 @@
+{
+  "scenario_id": "scenario-range-ambiguity",
+  "scenario_name": "Synthetic range ambiguity",
+  "synthetic": true,
+  "assumptions": [
+    "The object is represented as a point source in a synthetic optical frame.",
+    "Angular rate is estimated from synthetic frame motion.",
+    "Target range is intentionally unknown to demonstrate range ambiguity."
+  ],
+  "sensor_metadata": {
+    "timestamp_quality": "simulated",
+    "platform_location_known": true,
+    "platform_velocity_known": false,
+    "sensor_type": "optical",
+    "field_of_view_deg": 18,
+    "frame_rate_fps": 30,
+    "target_range_m": null,
+    "azimuth_deg": 42,
+    "elevation_deg": 18,
+    "chain_of_custody": "synthetic_fixture",
+    "compression_history": "simulated",
+    "radar_correlation": "absent",
+    "infrared_correlation": "absent"
+  },
+  "trajectory_input": {
+    "angular_rate_deg_s": 4.2,
+    "duration_s": 2.4,
+    "delta_v_m_s": null
+  }
+}

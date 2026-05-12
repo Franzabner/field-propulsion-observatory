@@ -1,0 +1,20 @@
+flowchart TB
+  artifact["Public Artifact"]
+  metadata["Metadata Review"]
+  range["Range / Geometry"]
+  timing["Timing / Platform State"]
+  correlation["Sensor Correlation"]
+  reconstruction["Reconstruction Confidence"]
+  result["Result Label"]
+
+  artifact --> metadata --> range --> timing --> correlation --> reconstruction --> result
+  result --> insufficient["Insufficient Data"]
+  result --> low["Low Confidence Reconstruction"]
+  result --> bounded["Bounded Reconstruction"]
+  result --> multi["Multi-Sensor Supported"]
+  result --> reviewable["Scientifically Reviewable"]
+
+  classDef funnel fill:#f8fafc,stroke:#475569,color:#111827
+  classDef result fill:#fff7ed,stroke:#9a3412,color:#111827
+  class artifact,metadata,range,timing,correlation,reconstruction funnel
+  class result,insufficient,low,bounded,multi,reviewable result

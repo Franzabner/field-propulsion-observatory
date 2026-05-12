@@ -1,0 +1,26 @@
+flowchart TB
+  report["Public Report"]
+  optical["Optical Track"]
+  infrared["Infrared Signature"]
+  radar["Radar Return"]
+  platform["Platform State"]
+  timing["Timing / Clock Discipline"]
+  custody["Custody / Compression"]
+  fusion["Correlation Review"]
+  output["Bounded Reconstruction Or Insufficient Data"]
+
+  report --> optical
+  report --> infrared
+  report --> radar
+  platform --> fusion
+  timing --> fusion
+  custody --> fusion
+  optical --> fusion
+  infrared --> fusion
+  radar --> fusion
+  fusion --> output
+
+  classDef sensor fill:#eef7f1,stroke:#166534,color:#111827
+  classDef review fill:#f8fafc,stroke:#334155,color:#111827
+  class optical,infrared,radar sensor
+  class report,platform,timing,custody,fusion,output review

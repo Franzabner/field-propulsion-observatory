@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/simulation-scenario.schema.json",
+  "title": "Simulation Scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "scenario_name",
+    "synthetic",
+    "assumptions",
+    "sensor_metadata",
+    "trajectory_input"
+  ],
+  "properties": {
+    "scenario_id": { "type": "string", "pattern": "^scenario-[a-z0-9-]+$" },
+    "scenario_name": { "type": "string", "minLength": 3 },
+    "synthetic": { "type": "boolean", "const": true },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3 },
+      "minItems": 1
+    },
+    "sensor_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "timestamp_quality",
+        "platform_location_known",
+        "platform_velocity_known",
+        "sensor_type",
+        "field_of_view_deg",
+        "frame_rate_fps",
+        "target_range_m",
+        "azimuth_deg",
+        "elevation_deg",
+        "chain_of_custody",
+        "compression_history",
+        "radar_correlation",
+        "infrared_correlation"
+      ],
+      "properties": {
+        "timestamp_quality": {
+          "type": "string",
+          "enum": ["simulated", "instrument_recorded", "estimated", "unknown"]
+        },
+        "platform_location_known": { "type": "boolean" },
+        "platform_velocity_known": { "type": "boolean" },
+        "sensor_type": {
+          "type": "string",
+          "enum": ["optical", "infrared", "radar", "multi_sensor", "unknown"]
+        },
+        "field_of_view_deg": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 180 },
+        "frame_rate_fps": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "target_range_m": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "azimuth_deg": { "type": ["number", "null"], "minimum": 0, "maximum": 360 },
+        "elevation_deg": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+        "chain_of_custody": {
+          "type": "string",
+          "enum": ["synthetic_fixture", "documented", "partial", "unknown"]
+        },
+        "compression_history": {
+          "type": "string",
+          "enum": ["none", "simulated", "known", "unknown"]
+        },
+        "radar_correlation": {
+          "type": "string",
+          "enum": ["present", "absent", "unknown", "not_applicable"]
+        },
+        "infrared_correlation": {
+          "type": "string",
+          "enum": ["present", "absent", "unknown", "not_applicable"]
+        }
+      }
+    },
+    "trajectory_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["angular_rate_deg_s", "duration_s", "delta_v_m_s"],
+      "properties": {
+        "angular_rate_deg_s": { "type": ["number", "null"] },
+        "duration_s": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "delta_v_m_s": { "type": ["number", "null"] },
+        "distance_m": { "type": ["number", "null"], "minimum": 0 }
+      }
+    }
+  }
+}

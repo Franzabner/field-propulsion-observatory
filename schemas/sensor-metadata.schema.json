@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/field-propulsion-observatory/sensor-metadata.schema.json",
+  "title": "Sensor Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sensor_id",
+    "synthetic",
+    "platform",
+    "sensor_type",
+    "timestamp_quality",
+    "platform_location_known",
+    "platform_velocity_known",
+    "field_of_view_deg",
+    "frame_rate_fps",
+    "target_range_m",
+    "correlations",
+    "chain_of_custody",
+    "compression_history"
+  ],
+  "properties": {
+    "sensor_id": { "type": "string", "pattern": "^sensor-[a-z0-9-]+$" },
+    "synthetic": { "type": "boolean", "const": true },
+    "platform": { "type": "string" },
+    "sensor_type": {
+      "type": "string",
+      "enum": ["optical", "infrared", "radar", "multi_sensor", "unknown"]
+    },
+    "timestamp_quality": {
+      "type": "string",
+      "enum": ["simulated", "instrument_recorded", "estimated", "unknown"]
+    },
+    "platform_location_known": { "type": "boolean" },
+    "platform_velocity_known": { "type": "boolean" },
+    "focal_length_mm": { "type": ["number", "null"], "minimum": 0 },
+    "field_of_view_deg": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 180 },
+    "frame_rate_fps": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "target_range_m": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "azimuth_deg": { "type": ["number", "null"], "minimum": 0, "maximum": 360 },
+    "elevation_deg": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+    "weather": { "type": "string" },
+    "wind": { "type": "string" },
+    "correlations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["radar", "infrared", "optical"],
+      "properties": {
+        "radar": { "type": "string", "enum": ["present", "absent", "unknown", "not_applicable"] },
+        "infrared": { "type": "string", "enum": ["present", "absent", "unknown", "not_applicable"] },
+        "optical": { "type": "string", "enum": ["present", "absent", "unknown", "not_applicable"] }
+      }
+    },
+    "chain_of_custody": {
+      "type": "string",
+      "enum": ["synthetic_fixture", "documented", "partial", "unknown"]
+    },
+    "compression_history": {
+      "type": "string",
+      "enum": ["none", "simulated", "known", "unknown"]
+    }
+  }
+}

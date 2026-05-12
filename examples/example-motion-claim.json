@@ -1,0 +1,22 @@
+{
+  "claim_id": "claim-synthetic-fast-transit",
+  "observation_event_id": "obs-synthetic-range-ambiguity",
+  "synthetic": true,
+  "claim_type": "silent_high_speed_transit",
+  "apparent_behavior": "A small bright object crosses the frame quickly under an unknown range assumption.",
+  "required_data": [
+    "target range",
+    "frame rate",
+    "field of view",
+    "platform motion",
+    "wind context"
+  ],
+  "common_false_positives": [
+    "near-field insect",
+    "bird",
+    "camera pan",
+    "compression artifact"
+  ],
+  "minimum_evidence_threshold": "Bounded range plus frame timing and platform motion are required before speed can be claimed.",
+  "review_status": "insufficient_data"
+}

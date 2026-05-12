@@ -1,0 +1,16 @@
+flowchart LR
+  scenario["Scenario"]
+  assumptions["Assumptions"]
+  sensor["Sensor Model"]
+  geometry["Geometry Model"]
+  trajectory["Trajectory Estimate"]
+  uncertainty["Uncertainty Sweep"]
+  hypothesis["Hypothesis Boundary"]
+  ledger["Simulation Ledger"]
+
+  scenario --> assumptions --> sensor --> geometry --> trajectory --> uncertainty --> hypothesis --> ledger
+
+  classDef sim fill:#eef2ff,stroke:#3730a3,color:#111827
+  classDef boundary fill:#fff7ed,stroke:#9a3412,color:#111827
+  class scenario,assumptions,sensor,geometry,trajectory,uncertainty,ledger sim
+  class hypothesis boundary

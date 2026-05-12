@@ -1,0 +1,30 @@
+{
+  "scenario_id": "scenario-multi-sensor-minimal",
+  "scenario_name": "Synthetic minimal multi-sensor support",
+  "synthetic": true,
+  "assumptions": [
+    "Range is bounded by a synthetic radar-like return.",
+    "Optical and infrared tracks are simulated as time-correlated.",
+    "The scenario tests bounded reconstruction, not propulsion."
+  ],
+  "sensor_metadata": {
+    "timestamp_quality": "instrument_recorded",
+    "platform_location_known": true,
+    "platform_velocity_known": true,
+    "sensor_type": "multi_sensor",
+    "field_of_view_deg": 9,
+    "frame_rate_fps": 60,
+    "target_range_m": 2200,
+    "azimuth_deg": 214,
+    "elevation_deg": 21,
+    "chain_of_custody": "synthetic_fixture",
+    "compression_history": "none",
+    "radar_correlation": "present",
+    "infrared_correlation": "present"
+  },
+  "trajectory_input": {
+    "angular_rate_deg_s": 1.8,
+    "duration_s": 4,
+    "delta_v_m_s": 12
+  }
+}

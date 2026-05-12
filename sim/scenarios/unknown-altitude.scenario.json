@@ -1,0 +1,30 @@
+{
+  "scenario_id": "scenario-unknown-altitude",
+  "scenario_name": "Synthetic unknown altitude",
+  "synthetic": true,
+  "assumptions": [
+    "The target altitude is not available.",
+    "Elevation angle is known from a synthetic sensor frame.",
+    "Range and size remain coupled to unresolved geometry."
+  ],
+  "sensor_metadata": {
+    "timestamp_quality": "simulated",
+    "platform_location_known": true,
+    "platform_velocity_known": true,
+    "sensor_type": "optical",
+    "field_of_view_deg": 24,
+    "frame_rate_fps": 30,
+    "target_range_m": null,
+    "azimuth_deg": 125,
+    "elevation_deg": 32,
+    "chain_of_custody": "synthetic_fixture",
+    "compression_history": "none",
+    "radar_correlation": "unknown",
+    "infrared_correlation": "unknown"
+  },
+  "trajectory_input": {
+    "angular_rate_deg_s": 2.6,
+    "duration_s": 3.2,
+    "delta_v_m_s": null
+  }
+}
