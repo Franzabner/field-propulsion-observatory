@@ -1,10 +1,22 @@
 # field-propulsion-observatory
 
-A public-safe engineering framework for evaluating anomalous motion claims through sensor metadata, trajectory reconstruction, simulation, and propulsion hypothesis boundaries.
+Status: Public scaffold. Release status: scaffolded. License pending human review. Synthetic examples only.
 
-This repository does not attempt to prove non-human technology. It asks a narrower engineering question:
+`field-propulsion-observatory` is a speculative engineering observatory and public research scaffold for anomalous-motion evidence discipline. It organizes sensor metadata, geometry, trajectory assumptions, uncertainty, synthetic simulation examples, propulsion concept taxonomy, and hypothesis-boundary language.
 
-When an object appears to move beyond conventional aerospace expectations, what data would be required to know whether the motion is real, misread, explainable, simulated under assumptions, or genuinely unresolved?
+Public boundary: this repository does not claim working propulsion, validated physics, experimental results, zero-point engineering, anti-gravity, UAP explanations, breakthrough energy, private lab results, datasets, models, Spaces, services, package releases, or sealed YOSO-YAi implementation.
+
+## What This Proves
+
+- Francisco can frame anomalous-motion claims as reviewable engineering evidence instead of unsupported assertion.
+- The repo demonstrates public-safe simulation, sensor metadata, uncertainty, and hypothesis-boundary documentation.
+- The repo shows how speculative propulsion vocabulary can be contained as hypothesis mapping and theory/patent reading context without becoming a public claim.
+
+## What This Does Not Prove
+
+- It does not prove exotic propulsion, working field propulsion, anti-gravity, usable zero-point energy, breakthrough energy, or any UAP explanation.
+- It does not validate physics, publish experimental results, verify real cases, or identify the origin of any event.
+- It does not release datasets, models, Spaces, reports, package artifacts, private lab topology, client work, services, or sealed YOSO-YAi details.
 
 ## Repo Identity
 

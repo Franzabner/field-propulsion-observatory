@@ -5,7 +5,7 @@
 | Repository | `field-propulsion-observatory` |
 | Public release status | scaffolded |
 | Local scaffold status | present |
-| GitHub publication | not created by this scaffold |
+| GitHub publication | public repository exists; no release artifact published |
 | Hugging Face artifact | none |
 | Upwork listing | none |
 | License | pending human review |
